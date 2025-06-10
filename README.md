@@ -4,7 +4,7 @@ A live-updating web app to display real-time football match scores, team logos, 
 
 ## 🚀 Features
 
-- Real-time match scores and status
+- Real-time match status
 - League and team filters
 - Team logos and match countdown
 - Auto-refresh every 60 seconds
@@ -14,7 +14,7 @@ A live-updating web app to display real-time football match scores, team logos, 
 
 ## 📦 Technologies
 
-- Node.js + Express
+- Node.js + Express.js
 - HTML/CSS/JS
 - Football-Data.org API
 

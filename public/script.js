@@ -5,8 +5,14 @@ const noMatches = document.getElementById('no-matches');
 const darkToggle = document.getElementById('dark-toggle');
 const filterToggle = document.getElementById('filter-toggle');
 const filtersDiv = document.getElementById('filters');
+const lastUpdated = document.getElementById('last-updated');
 
 let matches = [];
+
+function updateLastUpdated() {
+  const now = new Date();
+  lastUpdated.textContent = now.toLocaleTimeString();
+}
 
 async function fetchMatches() {
   try {
@@ -15,6 +21,7 @@ async function fetchMatches() {
     matches = data.matches || [];
     populateFilters();
     renderMatches();
+    updateLastUpdated();
   } catch (err) {
     console.error('Fetch error:', err);
   }
@@ -70,14 +77,6 @@ function renderMatches() {
     title.className = 'match-title';
     title.textContent = `${match.homeTeam.name} vs ${match.awayTeam.name}`;
 
-    const date = document.createElement('div');
-    date.className = 'match-date';
-    date.textContent = new Date(match.utcDate).toLocaleString();
-
-    const status = document.createElement('div');
-    status.className = 'match-status';
-    status.textContent = match.status === 'LIVE' ? '🔴 LIVE' : match.status;
-
     const logos = document.createElement('div');
     logos.className = 'team-logos';
 
@@ -89,6 +88,14 @@ function renderMatches() {
 
     logos.appendChild(homeLogo);
     logos.appendChild(awayLogo);
+
+    const status = document.createElement('div');
+    status.className = 'match-status';
+    status.textContent = match.status === 'LIVE' ? '🔴 LIVE' : match.status;
+
+    const date = document.createElement('div');
+    date.className = 'match-date';
+    date.textContent = new Date(match.utcDate).toLocaleString();
 
     card.appendChild(title);
     card.appendChild(date);
@@ -110,5 +117,6 @@ filterToggle.addEventListener('click', () => {
   filtersDiv.classList.toggle('show');
 });
 
+// Initial load + auto refresh
 fetchMatches();
-setInterval(refreshMatches, 60000);
+setInterval(fetchMatches, 60000);

@@ -3,26 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Soccer Matches</title>
+  <title>⚽ Live Soccer Matches</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
   <header>
-    <h1>⚽ Soccer Matches</h1>
-    <button id="dark-toggle">🌙 Toggle Dark Mode</button>
+    <h1>⚽ Live Soccer Matches</h1>
+    <div class="controls">
+      <button id="dark-toggle">🌙</button>
+      <button id="filter-toggle">🔍 Filters</button>
+    </div>
   </header>
 
-  <section class="filters-container">
-    <button id="filter-toggle">🔍 Filters</button>
-    <div id="filters" class="filters">
-      <select id="league-select">
-        <option value="">All Leagues</option>
-      </select>
-      <select id="team-select">
-        <option value="">All Teams</option>
-      </select>
-    </div>
+  <section id="filters" class="filters">
+    <select id="league-select">
+      <option value="">All Leagues</option>
+    </select>
+    <select id="team-select">
+      <option value="">All Teams</option>
+    </select>
   </section>
 
   <main>
@@ -30,9 +30,10 @@
     <p id="no-matches">No upcoming matches found.</p>
   </main>
 
-  <script src="script.js"></script>
   <footer id="footer">
-  🔄 Auto-refreshing every 60 seconds.
-</footer>
+    🔄 Auto-refreshing every 60 seconds. Last updated: <span id="last-updated">--</span>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
