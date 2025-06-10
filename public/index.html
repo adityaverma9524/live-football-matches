@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soccer Matches</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <h1>⚽ Soccer Matches</h1>
+    <button id="dark-toggle">🌙 Toggle Dark Mode</button>
+  </header>
+
+  <section class="filters-container">
+    <button id="filter-toggle">🔍 Filters</button>
+    <div id="filters" class="filters">
+      <select id="league-select">
+        <option value="">All Leagues</option>
+      </select>
+      <select id="team-select">
+        <option value="">All Teams</option>
+      </select>
+    </div>
+  </section>
+
+  <main>
+    <div id="matches" class="matches-grid"></div>
+    <p id="no-matches">No upcoming matches found.</p>
+  </main>
+
+  <script src="script.js"></script>
+  <footer id="footer">
+  🔄 Auto-refreshing every 60 seconds.
+</footer>
+</body>
+</html>

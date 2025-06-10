@@ -1,0 +1,150 @@
+:root {
+  --bg-color: #f4f6f9;
+  --text-color: #1a202c;
+  --card-bg: #fff;
+  --accent-color: #2b6cb0;
+}
+
+body.dark {
+  --bg-color: #1a202c;
+  --text-color: #f4f6f9;
+  --card-bg: #2d3748;
+  --accent-color: #90cdf4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 1.8rem;
+}
+
+#dark-toggle {
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.filters-container {
+  margin-bottom: 20px;
+}
+
+#filter-toggle {
+  display: none;
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.filters select {
+  padding: 6px;
+  font-size: 1rem;
+}
+
+#no-matches {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 1.2rem;
+  display: none;
+}
+
+.matches-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.match-card {
+  background-color: var(--card-bg);
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.match-card:hover {
+  transform: translateY(-4px);
+}
+
+.match-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.match-date {
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.match-status {
+  font-size: 0.9rem;
+  color: var(--accent-color);
+}
+
+.team-logos {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.team-logos img {
+  height: 32px;
+  width: auto;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .filters {
+    display: none;
+    flex-direction: column;
+  }
+
+  .filters.show {
+    display: flex;
+  }
+
+  #filter-toggle {
+    display: inline-block;
+  }
+}
