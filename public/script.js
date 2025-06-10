@@ -3,7 +3,6 @@ const leagueSelect = document.getElementById('league-select');
 const teamSelect = document.getElementById('team-select');
 const noMatches = document.getElementById('no-matches');
 const darkToggle = document.getElementById('dark-toggle');
-const filterToggle = document.getElementById('filter-toggle');
 const filtersDiv = document.getElementById('filters');
 const lastUpdated = document.getElementById('last-updated');
 
@@ -113,9 +112,7 @@ darkToggle.addEventListener('click', () => {
   document.body.classList.toggle('dark');
 });
 
-filterToggle.addEventListener('click', () => {
-  filtersDiv.classList.toggle('show');
-});
+
 
 // Initial load + auto refresh
 fetchMatches();
