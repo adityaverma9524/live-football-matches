@@ -1,11 +1,10 @@
 const express = require('express');
-require('dotenv').config(); // Enables local .env support
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 const path = require('path');
 
 const app = express();
 const PORT = 3000;
-const API_KEY = process.env.FOOTBALL_API_KEY;
+const API_KEY = 'b0ec7f9a16e44ac1bafaa44fd540984d';
 
 app.use(express.static(path.join(__dirname, 'public')));
 
